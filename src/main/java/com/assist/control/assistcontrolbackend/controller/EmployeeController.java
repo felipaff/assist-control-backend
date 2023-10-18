@@ -12,6 +12,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/v1")
 public class EmployeeController {
@@ -43,7 +44,7 @@ public class EmployeeController {
                 .orElseThrow(() -> new ResourceNotFoundException("employee id : "+ id + "doesn't exist"));
 
         employee.setName(employeeRequest.getName());
-        employee.setContractType(employeeRequest.getContractType());
+        employee.setPosition(employeeRequest.getPosition());
         employee.setContractType(employeeRequest.getContractType());
 
         Employee updatedEmployee = employeeRepository.save(employee);
