@@ -20,15 +20,25 @@ public class EmployeeController {
     @Autowired
     private EmployeeRepository employeeRepository;
 
-    @GetMapping("/employees")
-    public List<Employee> listEmployees(){
-        return employeeRepository.findAll();
-    }
-
     @PostMapping("/employees")
     public ResponseEntity<Employee> saveEmployee(@RequestBody Employee employee) {
         Employee savedEmployee = employeeRepository.save(employee);
         return ResponseEntity.status(HttpStatus.CREATED).body(savedEmployee);
+    }
+
+    @GetMapping("/employees")
+    public List<Employee> listEmployees(
+            @RequestParam(name = "positionId", required = false) Long positionId,
+            @RequestParam(name = "contractTypeId", required = false) Long contractTypeId) {
+        if (positionId != null && contractTypeId != null) {
+            return employeeRepository.findByPositionIdAndContractTypeId(positionId, contractTypeId);
+        } else if (positionId != null) {
+            return employeeRepository.findByPositionId(positionId);
+        } else if (contractTypeId != null) {
+            return employeeRepository.findByContractTypeId(contractTypeId);
+        } else {
+            return employeeRepository.findAll();
+        }
     }
 
     @GetMapping("/employees/{id}")
