@@ -42,3 +42,10 @@ You can access the Assist Control App API through the respective routes:
 
 - **GET /contract-types:** Get the list of all contract types.
 - **POST /contract-types:** Add a new contract type.
+
+### New Endpoints for Managing HoursWorked:
+
+- **GET /hours-worked/{id}:** Get hours worked records associated with a specific employee.
+- **POST /hours-worked:** Add a new hours worked record for an employee.
+- **PUT /hours-worked/{id}:** Update hours worked record.
+- **DELETE /hours-worked/{id}:** Delete hours worked record.

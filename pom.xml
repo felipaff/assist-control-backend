@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.assist.control</groupId>
 	<artifactId>assist-control-backend</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>assist-control-backend</name>
 	<description>Assist-control app backend</description>
 	<properties>

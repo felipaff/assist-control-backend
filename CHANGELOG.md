@@ -1,5 +1,13 @@
 # Changelog - Assist Control App Backend
 
+## 0.0.2-SNAPSHOT
+
+### Features
+
+- **Added**: Entity `HoursWorked` with fields `dateWorked`, `hours`, and `extraHours`.
+- **Added**: Controller for managing `HoursWorked` entities.
+- **Added**: Added functionality to create, update, and delete `HoursWorked` records.
+
 ## 0.0.1-SNAPSHOT
 
 ### Features
